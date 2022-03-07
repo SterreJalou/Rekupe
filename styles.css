@@ -1,0 +1,509 @@
+/*------------------------------------- 1. Global Styles -----------------------------------------*/
+
+* {
+    margin:0;
+    box-sizing:border-box;
+}
+
+:root {
+    --purple:#5722CD;
+    --blue:#4845E4;
+    --pink:#ED4385;
+    --black:#0C0C0C;
+    --lightpurple:#F2F0FF;
+    --lightgrey:#F3F6F9;
+    --grey:#7A7A7A;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    font-family: "Roboto Thin", sans-serif;
+    font-size: 16px;
+}
+
+section {
+    padding: 8vw;
+}
+
+.button {
+    background-color: var(--pink);
+    color:var(--lightpurple);
+    border-radius:25px;
+    text-transform:uppercase;
+    font-size: 12px;
+    padding: 18px 32px;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .25);
+    margin: 0;
+    display: inline-block;
+}
+
+/*------------------------------------- 2. Typography -----------------------------------------*/
+
+.merriweather {
+    font-family: Merriweather, sans-serif;
+}
+
+/* ------------------------------------ 4.1 Navigation -------------------------------------------- */
+
+nav {
+    display:flex;
+    justify-content:flex-end;
+    width:100%;
+    margin:5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+nav ul {
+    font-weight:100;
+    font-size:16px;
+    padding-top:20px;
+    list-style-type:none;
+    display:flex;
+    justify-content:space-between;
+    flex-basis:400px;
+}
+
+nav ul a {
+    text-decoration:none;
+    color:var(--lightpurple);
+    margin-right:40px;
+}
+
+/* ------------------------------------ 4.2 Hero -------------------------------------------- */
+
+
+.hero {
+    background: linear-gradient(90deg, rgba(72, 69, 228, 1) 8%, rgba(87, 34, 205, 1) 76%);
+    position:relative;
+    padding:150px 300px;
+}
+
+.hero .content {
+    text-align: center;
+    color: var(--lightpurple);
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.hero .content h1 {
+    font-size: 40px;
+}
+
+.hero .content p {
+    padding: 30px;
+    font-weight:100;
+    font-size:22px;
+}
+
+.squiggle {
+    height:100px;
+    width:79px;
+    position:absolute;
+    left: calc(50% - 40px);
+    bottom:0;
+}
+
+.hero::after {
+    content:"";
+    position:absolute;
+    border-bottom:40px solid white;
+    border-right: 100vw solid transparent;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+/* ------------------------------------ 4.3 Section -------------------------------------------- */
+
+.intro {
+    position: relative;
+}
+
+.intro::before {
+    content:"hello";
+    font-family: "Roboto Thin", sans-serif;
+    font-size: 420px;
+    text-align: center;
+    font-weight:600;
+    color: var(--lightpurple);
+    position:absolute;
+    inset: 0;
+}
+
+.intro .content {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.intro .content h2 {
+    font-family: Merriweather, sans-serif;
+    font-size: 26px;
+    color: var(--purple);
+}
+
+.intro .content p {
+    padding-top:70px;
+    color: var(--black);
+}
+
+.intro .content a {
+    color: var(--purple);
+    margin:0;
+}
+
+.intro::after {
+    content:"";
+    position:absolute;
+    border-bottom:40px solid var(--lightgrey);
+    border-right: 100vw solid transparent;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+
+/* ------------------------------------ 4.4 Projects -------------------------------------------- */
+
+.projects::before {
+    content:"work";
+    font-size:400px;
+    font-weight:550;
+    color:white;
+    inset:0;
+    text-align:center;
+    z-index:-1;
+    position:absolute;
+}
+
+.projects {
+    position:relative;
+    padding-top:170px;
+    background-color: var(--lightgrey);
+    z-index:1;
+}
+.projects article {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:50px 0;
+}
+
+.projects article .content {
+    position:relative;
+    width:40%;
+    padding:0 2rem;
+}
+
+.projects article img {
+    width:60%;
+    margin-left: 4rem;
+}
+.projects article:nth-of-type(even) img {
+    margin-left: 0;
+    margin-right: 4rem;
+}
+.projects .content h3 {
+    font-family: Merriweather, sans-serif;
+    font-size:24px;
+    position:relative;
+}
+.projects .content p {
+    margin: 4rem 0 2rem 0;
+}
+
+.projects .content a {
+    text-transform:uppercase;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:2px;
+    position:relative;
+}
+
+.projects article .content h3::before {
+    content:'';
+    background-image: url("/assets/squiggle_line.svg");
+    position:absolute;
+    background-repeat:no-repeat;
+    left:0;
+    top:150%;
+    width:60px;
+    height:50px;
+}
+
+.projects::after {
+    content:"";
+    position:absolute;
+    border-bottom:40px solid white;
+    border-right: 100vw solid transparent;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.projects article .content a .line {
+    position:absolute;
+    height:1px;
+    width:1rem;
+    background-color: var(--purple);
+    left:110%;
+    top:5px;
+    transition: all 300ms ease-in-out;
+}
+
+.projects article .content a:hover .line {
+    width:3rem;
+}
+
+/* ------------------------------------ 4.5 Services -------------------------------------------- */
+
+.service {
+    position:relative;
+}
+
+.service .grid-container {
+    display:inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.box {
+    padding:40px 40px;
+    display:inline-grid;
+    margin:15px;
+    background-color:white;
+    filter: drop-shadow(2px 2px 2px #c2c2c2);
+    border: 1px solid var(--purple);
+}
+
+.box h4 {
+    padding-top:20px;
+    font-family: Merriweather, sans-serif;
+    font-size:20px;
+    color: var(--purple);
+}
+
+.box p {
+    padding: 20px 0 20px 0;
+    font-size:14px;
+    font-weight:100;
+    color: var(--grey);
+}
+
+.service img {
+    width: 60px;
+}
+
+.service::before {
+    content:"services";
+    font-family: "Roboto Thin", sans-serif;
+    font-size: 200px;
+    text-align: center;
+    font-weight:600;
+    color: var(--lightpurple);
+    position:absolute;
+    inset: 0;
+}
+
+/* ------------------------------------ 4.5 Form -------------------------------------------- */
+
+.contact::before {
+    content:"";
+    position:absolute;
+    border-top:40px solid white;
+    border-left: 100vw solid transparent;
+    left: 0;
+    right: 0;
+    top:0;
+    display:flex;
+    justify-content:flex-start;
+}
+
+.contact {
+    background: linear-gradient(90deg, rgba(72, 69, 228, 1) 8%, rgba(87, 34, 205, 1) 76%);
+    position:relative;
+    padding:150px 300px;
+}
+
+.contact .content {
+    text-align: center;
+    color: var(--lightpurple);
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.contact .content h1 {
+    font-family: Merriweather, sans-serif;
+    font-size: 40px;
+}
+
+.contact .content p {
+    padding: 30px;
+    font-weight:100;
+    font-size:22px;
+}
+
+form {
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+}
+label {
+    color: var(--lightpurple);
+    font-size:14px;
+    font-weight:600;
+    padding-top:30px;
+}
+input {
+    margin-top:2px;
+    padding:15px;
+    border:none;
+    border-radius:3px;
+}
+
+.message {
+    padding-bottom:200px;
+}
+
+.contact .button {
+    display:inline-block;
+    padding:18px 64px;
+    margin-left: calc(40%);
+    margin-top:30px;
+}
+
+/* ------------------------------------ 4.5 Footer -------------------------------------------- */
+
+footer {
+    padding:20px;
+    background-color: var(--black);
+    text-align:center;
+    color: var(--lightpurple);
+    font-weight:200;
+}
+
+/* ------------------------------------ 4.5 Mobile  -------------------------------------------- */
+
+@media screen and (max-width:578px) {
+
+    section {
+        padding: 4vw;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul {
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .hero {
+        padding:140px 60px;
+    }
+
+    .hero .content h1 {
+        font-size:28px;
+    }
+
+    .hero .content p {
+        font-size:20px;
+    }
+
+    .squiggle {
+        padding-top:15px;
+    }
+
+    .intro {
+        padding:150px 60px;
+    }
+
+    .intro::before{
+        padding-top:60px;
+        font-size:160px;
+    }
+
+    .intro .content h2 {
+        font-size:18px;
+    }
+
+    .projects::before {
+        font-size:160px;
+        padding-top:60px;
+    }
+
+    .projects {
+        padding-top: 10rem;
+        padding-top: 3rem;
+    }
+
+    .projects article {
+        flex-wrap:wrap;
+        width:100%;
+    }
+
+    .projects article img {
+        width:100%;
+        order:1;
+        margin: 0;
+    }
+
+    .projects article .content {
+        font-size:16px;
+        width:100%;
+        order:2;
+        padding:40px 0;
+    }
+
+    .service {
+        display: flex;
+        justify-content: center;
+    }
+
+    .service .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .service .grid-container .box {
+        max-width:350px;
+    }
+
+    .service::before {
+        font-size:100px;
+    }
+
+    .contact {
+        padding:140px 20px 50px 20px;
+    }
+
+    .contact .content h1 {
+        font-size:28px;
+    }
+
+    .contact .content p {
+        font-size: 18px;
+        padding-bottom:0;
+    }
+
+    .contact .button {
+        margin-left: calc(32%);
+    }
+
+    footer {
+        font-size:12px;
+    }
+
+}
